@@ -33,3 +33,13 @@ export function promptUserToEnterTotalBill(){
   }
 
 }
+
+// export function calculateTip() {
+//   var billAmt = document.getElementById("billAmt").value;
+//   var tipPerc = document.getElementById("tipPerc").value;
+
+//   var tipAmt = parseFloat(billAmt) * (parseFloat(tipPerc) / 100);
+//   var totalAmt = parseFloat(billAmt) + tipAmt;
+
+//   document.getElementById("totalTip").innerHTML = "Tip Amount: $" + tipAmt.toFixed(2) + "<br>Total Amount: $" + totalAmt.toFixed(2);
+// }

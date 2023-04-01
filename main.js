@@ -2,12 +2,13 @@ import './style.css'
 import Rasulu from '/Rasulu.png'
 import { setupCounter } from './counter.js'
 import { promptUserToEnterTotalBill } from './counter.js'
+// import { calculateTip } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
       <img src="${Rasulu}" class="logo" alt="rasulu" />
     
-    <h1>Lets Tip Each For Fun!</h1>
+    <h1>Lets Tip Each other For Fun!</h1>
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
@@ -27,11 +28,10 @@ document.querySelector('#app').innerHTML = `
       <button id="calc" type="button">5%</button>
       <button id="calc" type="button">50%</button>
     </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
+    <br/>
   </div>
 `
 
 setupCounter(document.querySelector('#counter'))
-promptUserToEnterTotalBill(document.querySelector("#calc"))
+promptUserToEnterTotalBill(document.querySelector("#totalTip"))
+
