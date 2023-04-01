@@ -1,6 +1,7 @@
 import './style.css'
 import Rasulu from '/Rasulu.png'
 import { setupCounter } from './counter.js'
+import { promptUserToEnterTotalBill } from './counter.js'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -10,6 +11,22 @@ document.querySelector('#app').innerHTML = `
     <div class="card">
       <button id="counter" type="button"></button>
     </div>
+    <div class="card">
+      <label for="html">Enter Total Bill!</label>
+      <br>
+      <br>
+      <input type="number" id="bill" name="bill" required
+       minlength="4" maxlength="8" size="20">
+      <button id="calc" type="button"></button>
+    </div>
+    <div class="card">
+      <label for="html">Select Tip!</label><br>
+      <br/>
+      <button id="calc" type="button">15%</button>
+      <button id="calc" type="button">10%</button>
+      <button id="calc" type="button">5%</button>
+      <button id="calc" type="button">50%</button>
+    </div>
     <p class="read-the-docs">
       Click on the Vite logo to learn more
     </p>
@@ -17,3 +34,4 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+promptUserToEnterTotalBill(document.querySelector("#calc"))
