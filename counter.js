@@ -8,15 +8,20 @@ export function setupCounter(element) {
   setCounter(0)
 }
 
+let form = document.getElementById("form-result");
+let result = document.getElementById("calc-result");
 
 // logic to prompt user to enter the bill
-function getBillAmount() {
+export function getBillAmount() {
   // Get the value of the input field
-  var input = document.getElementById("bill");
-  var inputValue = input.value;
+  var inputValue = parseInt(document.getElementById("bill").value);
 
-  // Log the value to the console
-  console.log(inputValue);
+  if (inputValue === null || inputValue === undefined) {
+    console.log("add input value")
+  } else {
+    // Access the 'value' property of myVariable here
+    console.log(inputValue);
+  }
 }
 
 export function promptUserToEnterTotalBill(){
@@ -46,3 +51,5 @@ function computeResult(billAmount, tipPercentage){
 
   }
 }
+
+form.addEventListener("submit", computeResult);
