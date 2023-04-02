@@ -8,16 +8,31 @@ export function setupCounter(element) {
   setCounter(0)
 }
 
+
 // logic to prompt user to enter the bill
+function getBillAmount() {
+  // Get the value of the input field
+  var input = document.getElementById("bill");
+  var inputValue = input.value;
+
+  // Log the value to the console
+  console.log(inputValue);
+}
 
 export function promptUserToEnterTotalBill(){
-  let billAmount = document.getElementById("bill").value;
-  console.log(billAmount);
-  let tipPercentage = document.getElementById("calc").value ;
+  let billAmount = getBillAmount()
+
+  let tipPercentage = document.getElementById("calc").value;
   console.log(tipPercentage);
 
   billAmount = Number(billAmount);
   tipPercentage = Number(tipPercentage);
+
+  console.log(computeResult());
+
+}
+
+function computeResult(billAmount, tipPercentage){
 
   if(isNaN(billAmount) || billAmount <= 0 || isNaN(tipPercentage) || tipPercentage < 0){
     console.log("Please enter a positive number for the bill amount.");
@@ -27,19 +42,7 @@ export function promptUserToEnterTotalBill(){
     let totalAmount = billAmount + tipAmount;
 
     // Display the results to the user
-    // alert(`Tip amount: $${tipAmount.toFixed(2)}\nTotal amount: $${totalAmount.toFixed(2)}`);
+    totalAmount = (`Tip amount: $${tipAmount.toFixed(2)}\nTotal amount: $${totalAmount.toFixed(2)}`);
 
-    console.log("calculate the needed tip for this");
   }
-
 }
-
-// export function calculateTip() {
-//   var billAmt = document.getElementById("billAmt").value;
-//   var tipPerc = document.getElementById("tipPerc").value;
-
-//   var tipAmt = parseFloat(billAmt) * (parseFloat(tipPerc) / 100);
-//   var totalAmt = parseFloat(billAmt) + tipAmt;
-
-//   document.getElementById("totalTip").innerHTML = "Tip Amount: $" + tipAmt.toFixed(2) + "<br>Total Amount: $" + totalAmt.toFixed(2);
-// }
