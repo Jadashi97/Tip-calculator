@@ -61,7 +61,7 @@ const calculateBill = () => {
         // console.log(addPeople);
     // update the DOM with the new number of people
 
-        numberOfPeopleDiv.innerHTML = addPeople * totalPerPerson;
+        numberOfPeopleDiv.innerHTML = addPeople;
     // calculate the bill based on the new number of people
         // totalPerPerson = totalAmount / addPeople;
   }
@@ -71,14 +71,14 @@ const calculateBill = () => {
     // guard clause
     // if amount is 1 or less simply return
     // (a.k.a you can't decrease the number of people to 0 or negative!)
-  
-    
+        // while(numberOfPeopleDiv != 0){
+
+        // }
     // decrement the amount of people
-  
-  
+        let decrementPeople = numberOfPeople -= 1; 
     // update the DOM with the new number of people
-  
+        numberOfPeopleDiv.innerHTML = decrementPeople;
   
     // calculate the bill based on the new number of people
-  
+        
   }
