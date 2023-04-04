@@ -1,21 +1,4 @@
-/* 
-🌟 APP: Tip Calculator
 
-These are the 3 functions you must use 👇
-=========================================
-calculateBill()
-increasePeople()
-decreasePeople()
-
-These functions are hard coded in the HTML. So, you can't change their names.
-
-These are all the DIV ID's you're gonna need access to 👇
-========================================================
-#1 ID 👉 'billTotalInput' = User input for bill total
-#2 ID 👉 'tipInput' = User input for tip
-#3 ID 👉 'numberOfPeople' = Current number of people you're splitting the bill between
-#4 ID 👉 'perPersonTotal' = Total dollar value owed per person
-*/
 
 // Get global access to all inputs / divs here (you'll need them later 😘)
 // bill input, tip input, number of people div, and per person total div
@@ -51,7 +34,7 @@ const calculateBill = () => {
     // console.log({totalPerPerson});
   
     // update the perPersonTotal on DOM & show it to user
-    perPersonTotal.innerHTML = `$${totalPerPerson}`;
+    perPersonTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
   }
   
   // ** Splits the bill between more people **
@@ -63,7 +46,7 @@ const calculateBill = () => {
 
         numberOfPeopleDiv.innerHTML = addPeople;
     // calculate the bill based on the new number of people
-        // totalPerPerson = totalAmount / addPeople;
+        calculateBill();
   }
   
   // ** Splits the bill between fewer people **
@@ -71,14 +54,14 @@ const calculateBill = () => {
     // guard clause
     // if amount is 1 or less simply return
     // (a.k.a you can't decrease the number of people to 0 or negative!)
-        // while(numberOfPeopleDiv != 0){
-
-        // }
+        if(numberOfPeopleDiv <= 1){
+            return
+        }
     // decrement the amount of people
         let decrementPeople = numberOfPeople -= 1; 
     // update the DOM with the new number of people
         numberOfPeopleDiv.innerHTML = decrementPeople;
   
     // calculate the bill based on the new number of people
-        
+        calculateBill();
   }
